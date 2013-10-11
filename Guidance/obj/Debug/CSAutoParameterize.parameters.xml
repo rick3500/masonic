@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultvalue="Data Source=.\SQLEXPRESS;Initial Catalog=aspnet-Guidance-201242219140;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\simmons\\Documents\\Visual\ Studio\ 2010\\Projects\\Guidance\\Guidance\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="FreeMasonryEntities-Web.config Connection String" description="FreeMasonryEntities Connection String used in web.config by the application to access the database." defaultvalue="metadata=res://*/MasonicData.csdl|res://*/MasonicData.ssdl|res://*/MasonicData.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=2125-10GH2Q1\SQLEXPRESS;initial catalog=FreeMasonry;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\simmons\\Documents\\Visual\ Studio\ 2010\\Projects\\Guidance\\Guidance\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FreeMasonryEntities']/@connectionString" />
+  </parameter>
+  <parameter name="MasonicEntities-Web.config Connection String" description="MasonicEntities Connection String used in web.config by the application to access the database." defaultvalue="metadata=res://*/Data.MasonicData.csdl|res://*/Data.MasonicData.ssdl|res://*/Data.MasonicData.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=2125-10GH2Q1\SQLEXPRESS;initial catalog=NerdDinner;integrated security=True;multipleactiveresultsets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\simmons\\Documents\\Visual\ Studio\ 2010\\Projects\\Guidance\\Guidance\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MasonicEntities']/@connectionString" />
+  </parameter>
+</parameters>

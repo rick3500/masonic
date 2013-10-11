@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Guidance.Data.Dinner>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+
+<ul data-role="listview" data-inset="true" data-theme="a">
+    <li data-role="list-divider">Navigation</li>
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+</ul>
+
+<ul data-role="listview" data-inset="true" data-theme="c">
+    
+    <li data-role="list-divider">Lodges</li>
+    @foreach (var lodge in Model)
+    {
+        <li data-role="list-item">
+            @switch (lodge.LocationType)
+            {
+                case 1:
+                    <img src="~/Content/Images/SquareAndCompasses.png" alt="Blue Lodge" height="64" width="64"/>
+                    break;
+                case 2:
+                    <img src="~/Content/Images/Shrine.png" alt="Shriner" height="64" width="64"/>
+                    break;
+                case 3:
+                    <img src="~/Content/Images/ScottishRiteDE.png" alt="Scottish Rite" height="64" width="64"/>
+                    break;
+
+            }
+                
+            @*<img src=@ViewBag.LodgeType height="64" width="64"/>*@
+            <b>@Html.DisplayFor(modelLodge => lodge.Title)</b><p>.</p>
+            <p>@Html.DisplayFor(modelLodge => lodge.Address)</p>
+            <span>@Html.ActionLink("Directions", "FindRoute", "Lodge", new { waypointString = "28.839862,-81.120847;" + lodge.Latitude + "," + lodge.Longitude }, htmlAttributes: "")</span>
+            @*<span>@Html.ActionLink("Find Lodges", "FindLodge", "Lodge", new { searchString = "mason; Oviedo, FL" }, htmlAttributes: "")</span>*@
+            <span>@Html.ActionLink("Show Lodges", "showLodge", "Lodge", new { waypointString = lodge.Latitude + "," + lodge.Longitude }, htmlAttributes: "")</span>
+            <span><a href= @lodge.WebSite data-rel="dialog" data-transition="slideup">Lodge Web Site</a></span>
+        </li>
+    }
+
+
+
+@*    <li data-role="list-item">
+        <img src=@ViewBag.LodgeType height="64" width="64"/>
+        <b>Oviedo Lodge #243</b> <p>.</p>
+        <p>Mtgs 2nd & 4th Monday</p>
+        <ul>
+            <li><p>534 King Street</p><p>Oviedo, FL</p></li>
+        </ul>
+    <li data-role="list-item" ><img src="ScottishRiteDE.png" height="64" width="64"/>Scottish Rite Temple</li>
+    <li data-role="list-item" ><img src="SquareAndCompasses.png" height="64" width="64"/> Winter Park Lodge #239</li>
+    <li data-role="list-item" ><img src="Shrine.png" height="64" width="64"/>Bahia Shrine</li>
+   <li data-role="list-item">@Html.ActionLink("clickme", "FindRoute", "Home")</li>*@
+</ul>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MasonicModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="MasonicModelStoreContainer">
+    <EntitySet Name="Dinners" EntityType="MasonicModel.Store.Dinners" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Dinners">
+    <Key>
+      <PropertyRef Name="DinnerID" />
+    </Key>
+    <Property Name="DinnerID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="EventDate" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="HostedBy" Type="nvarchar" Nullable="false" MaxLength="256" />
+    <Property Name="ContactPhone" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Latitude" Type="float" Nullable="false" />
+    <Property Name="Longitude" Type="float" Nullable="false" />
+    <Property Name="HostedById" Type="nvarchar" MaxLength="256" />
+    <Property Name="LocationType" Type="int" />
+    <Property Name="WebSite" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+</Schema>
